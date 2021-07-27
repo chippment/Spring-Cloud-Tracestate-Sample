@@ -1,0 +1,24 @@
+server.port: 8003
+
+# Actuator Endpoint Configurations
+info: # /actuator/info
+  app:
+    name: ${spring.application.name}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+
+spring:
+  application:
+    name: service a
+  #zipkin:
+  #  baseUrl: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+
+spring.sleuth.propagation.type: W3C

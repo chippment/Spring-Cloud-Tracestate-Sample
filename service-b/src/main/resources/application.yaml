@@ -1,0 +1,22 @@
+server.port: 8001
+
+# Actuator Endpoint Configurations
+info: # /actuator/info
+  app:
+    name: ${spring.application.name}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+
+spring:
+  application:
+    name: service b
+  sleuth:
+    sampler:
+      probability: 1.0
+
+spring.sleuth.propagation.type: W3C
